@@ -64,14 +64,18 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader("📸 Webcam / Upload")
-    camera_input = st.camera_input("Point at text!")
+    # camera_input = st.camera_input("Point at text!")
     uploaded_file = st.file_uploader("Or upload...", type=['png','jpg','jpeg'])
     
     current_image = None
-    if camera_input:
-        current_image = Image.open(io.BytesIO(camera_input.getvalue()))
-        st.image(current_image, caption="📷 Captured", width=400)
-    elif uploaded_file:
+    # if camera_input:
+    #     current_image = Image.open(io.BytesIO(camera_input.getvalue()))
+    #     st.image(current_image, caption="📷 Captured", width=400)
+    # elif uploaded_file:
+    #     current_image = Image.open(uploaded_file)
+    #     st.image(current_image, caption="📁 Uploaded", width=400)
+
+    if uploaded_file:
         current_image = Image.open(uploaded_file)
         st.image(current_image, caption="📁 Uploaded", width=400)
 
